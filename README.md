@@ -1,1 +1,1 @@
-# How to setup a hotspot using windows with python (gui and cmd)
+# Setup a hotspot on windows with this python script.
