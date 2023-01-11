@@ -62,8 +62,9 @@ if is_admin():
         global ssid_name
         global hotspot_password
         settings = open('settings.in', 'r')
-        ssid_name = str(settings.readline())
-        hotspot_password = str(settings.readline())
+        hotspot_settings = settings.read().split()
+        ssid_name = hotspot_settings[0]
+        hotspot_password = hotspot_settings[1]
         settings.close()
         
         subprocess.run(f"netsh wlan set hostednetwork mode=allow ssid=\"{ssid_name}\" key=\"{hotspot_password}\"", shell=True, capture_output=True)
